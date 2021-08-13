@@ -10,7 +10,7 @@ import os
 
 def main(proc_id=0, rec=0, mode='manual',
          root=r'C:\Users\Owner\Downloads\Telegram Desktop\S3DesktopManager 1.6.3\S3DesktopManager.exe',
-         download_path='', txt_file='', sleep_time=7.5, file_name=''):
+         download_path='', txt_file='', sleep_time=10, file_name=''):
 
     downloaded = {}
 
@@ -55,7 +55,7 @@ def main(proc_id=0, rec=0, mode='manual',
     if recv_t - rec < 100000:
         res = 'Fallen'
 
-    print(file_name, mode, res, str(((recv_t - rec) / 1024) / sleep_time), str(sleep_time), datetime.now())
+    print(mode, res, str(((recv_t - rec) / 1024) / sleep_time), str(sleep_time), datetime.now())
 
     rec = recv_t
 
@@ -101,4 +101,5 @@ if __name__ == '__main__':
     path = 'C:\\Users\\Owner\\Desktop\\S3\\' + file.replace('.txt', '')
     txt = 'C:\\Users\\Owner\\Desktop\\S3\\TXT\\' + file
 
-    main(mode='text_file', download_path=path, txt_file=txt, file_name=file)
+    main(mode='auto_tune', download_path=r'C:\Users\Owner\Desktop\S3\@GPCubanS3 The Forest v1', txt_file=txt,
+         file_name=file)
